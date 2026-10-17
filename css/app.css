@@ -1,0 +1,160 @@
+/* love-bucket-of-songs — page styles on top of the shared love theme */
+
+main {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-bottom: 3rem;
+}
+
+.hero {
+  min-height: auto;
+  text-align: center;
+  padding: 2.4rem 1rem 0;
+}
+
+.eyebrow { color: var(--pink); }
+
+.hero h1 { margin: 0.2rem 0 0.4rem; }
+.subtitle { margin: 0; color: var(--muted); }
+
+.sent-note {
+  text-align: center;
+  background: rgba(255, 159, 207, 0.14);
+  border: 1px solid var(--pink-strong);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  margin: 0 auto;
+  max-width: 32rem;
+  color: var(--text);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow);
+  max-width: 40rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.panel h2 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.panel-head h2 { margin: 0; }
+
+.progress-panel { text-align: center; }
+
+.progress-track {
+  height: 12px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  transition: width 0.4s ease;
+}
+
+.progress-label { margin: 0.6rem 0 0.2rem; color: var(--text); font-weight: 600; }
+
+.bucket-count { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.bucket-count span { color: var(--text); font-weight: 700; }
+
+.song-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.song-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-soft);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.song-row.picked {
+  border-color: var(--pink-strong);
+  box-shadow: 0 0 0 2px rgba(255, 114, 184, 0.35);
+}
+
+.song-row.done { opacity: 0.72; }
+.song-row.done .song-title { text-decoration: line-through; }
+
+.sing-btn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  border-radius: 999px;
+  width: 2.1rem;
+  height: 2.1rem;
+  line-height: 1;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sing-btn[aria-pressed="true"] {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: var(--bg);
+}
+
+.song-body { min-width: 0; }
+.song-title { font-weight: 600; color: var(--text); }
+.song-artist { color: var(--muted); font-size: 0.9rem; }
+.song-why {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.song-sung { margin: 0.25rem 0 0; color: var(--pink); font-size: 0.78rem; }
+
+.add-panel p { color: var(--muted); margin: 0 0 0.8rem; }
+
+.add-form { display: grid; gap: 0.35rem; }
+.add-form label { font-size: 0.8rem; color: var(--muted); }
+.add-form input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--text);
+}
+.add-form input:focus { outline: 2px solid var(--pink-strong); outline-offset: 1px; }
+.add-form .button { margin-top: 0.5rem; justify-self: start; }
+
+.add-msg { min-height: 1.2em; font-size: 0.85rem; color: var(--pink); margin: 0.7rem 0 0; }
+
+.share-panel p { color: var(--muted); margin: 0 0 0.8rem; }
+
+.share-note { min-height: 1.2em; font-size: 0.85rem; color: var(--muted); margin: 0.7rem 0 0; }
